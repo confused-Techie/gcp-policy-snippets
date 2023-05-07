@@ -1,0 +1,16 @@
+{
+  "name": "gcp-policy-snippets",
+  "version": "1.0.0",
+  "description": "Google Cloud Platform: Policy file Snippets",
+  "keywords": [
+    "pulsar-package",
+    "pulsar-edit"
+  ],
+  "author": "confused-Techie",
+  "license": "MIT",
+  "repository": "https://github.com/confused-Techie/gcp-policy-snippets",
+  "activationHooks": [
+    "source.json:root-scope-used",
+    "source.yaml:root-scope-used"
+  ]
+}

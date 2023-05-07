@@ -1,0 +1,237 @@
+".source.json":
+  "GCP-Policy: Version":
+    prefix: "version"
+    body: """
+      "version": ${1:3},
+      $2
+    """
+    description: "Specifies the format of the policy."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+    rightLabel: "integer"
+  "GCP-Policy: Bindings[]":
+    prefix: "bindings"
+    body: """
+      "bindings": [
+        {
+          $1
+        }
+      ],
+    """
+    description: "Associates a list of members, or principals, with a role."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+    rightLabel: "object (Binding)"
+  "GCP-Policy: AuditConfigs":
+    prefix: "auditConfigs"
+    body: """
+      "auditConfigs": [
+        {
+          $1
+        }
+      ],
+    """
+    description: "Specifies cloud audit logging configuration for this policy."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+    rightLabel: "object (AuditConfig)"
+  "GCP-Policy: etag":
+    prefix: "etag"
+    body: """
+      "etag": "$1",
+      $2
+    """
+    description: "etag is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+    rightLabel: "string"
+  "GCP-Policy: Binding.Role":
+    prefix: "role"
+    body: """
+      "role": "$1",
+    """
+    description: "Role that is assigned to the list of members, or principals."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+    rightLabel: "string"
+  "GCP-Policy: Binding.Members":
+    prefix: "members"
+    body: """
+      "members": [
+        $1
+      ],
+    """
+    description: "Specifies the principals requesting access for a Google Cloud resource."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+    rightLabel: "string[]"
+  "GCP-Policy: Binding.Condition":
+    prefix: "condition"
+    body: """
+      "condition": {
+        $1
+      },
+      $2
+    """
+    description: "The condition that is associated with this binding."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+    rightLabel: "object (Expr)"
+  "GCP-Policy: AuditConfig.Service":
+    prefix: "service"
+    body: """
+      "service": "$1"
+    """
+    description: "Specifies a service that will be enabled for audit logging."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+    rightLabel: "string"
+  "GCP-Policy: AuditConfig.AuditLogConfigs":
+    prefix: "auditLogConfigs"
+    body: """
+      "auditLogConfigs": [
+        {
+          $1
+        }
+      ],
+    """
+    description: "The configuration for logging of each type of permission."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+    rightLabel: "object (AuditLogConfig)"
+  "GCP-Policy: AuditConfig.AuditLogConfigs.LogType":
+    prefix: "logType"
+    body: """
+      "logType": $1
+    """
+    description: "The log type that this config enables."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+    rightLabel: "enum (LogType)"
+  "GCP-Policy: AuditConfig.AuditLogConfigs.ExemptedMembers":
+    prefix: "exemptedMembers"
+    body: """
+      "exemptedMembers": [
+        "$1"
+      ],
+    """
+    description: "Specifies the identities that do not cause logging for this type of permission."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+    rightLabel: "string"
+  "GCP-Policy: LogType.Unspecified":
+    prefix: "LOG_TYPE_UNSPECIFIED"
+    body: "LOG_TYPE_UNSPECIFIED"
+    description: "Default case. Should never be this."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+  "GCP-Policy: LogType.Admin_Read":
+    prefix: "ADMIN_READ"
+    body: "ADMIN_READ"
+    description: "Admin reads."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+  "GCP-Policy: LogType.Write":
+    prefix: "DATA_WRITE"
+    body: "DATA_WRITE"
+    description: "Data writes."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+  "GCP-Policy: LogType.Read":
+    prefix: "DATA_READ"
+    body: "DATA_READ"
+    description: "Data reads."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+
+".source.yaml":
+  "GCP-Policy: Version":
+    prefix: "version"
+    body: "version: ${1:3}"
+    description: "Specifies the format of the policy."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+    rightLabel: "integer"
+  "GCP-Policy: Bindings":
+    prefix: "bindings"
+    body: """
+      bindings:
+      - $1
+    """
+    description: "Associates a list of members, or principals, with a role."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+    rightLabel: "object (Binding)"
+  "GCP-Policy: AuditConfig":
+    prefix: "auditConfigs"
+    body: """
+      auditConfigs:
+      - $1
+    """
+    description: "Specifies cloud audit logging configuration for this policy."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+    rightLabel: "object (AuditConfig)"
+  "GCP-Policy: etag":
+    prefix: "etag"
+    body: "etag: $1"
+    description: "etag is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+  "GCP-Policy: Binding.Role":
+    prefix: "role"
+    body: "role: $1"
+    description: "Role that is assigned to the list of members, or principals."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+    rightLabel: "string"
+  "GCP-Policy: Binding.Members":
+    prefix: "members"
+    body: """
+      members:
+        - $1
+    """
+    description: "Specifies the principals requesting access for a Google Cloud resource."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+    rightLabel: "string[]"
+  "GCP-Policy: Binding.Condition":
+    prefix: "condition"
+    body: """
+      condition:
+        $1
+    """
+    description: "The condition that is associated with this binding."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+    rightLabel: "object (Expr)"
+  "GCP-Policy: AuditConfig.Service":
+    prefix: "service"
+    body: "service: $1"
+    description: "Specifies a service that will be enabled for audit logging."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+    rightLabel: "string"
+  "GCP-Policy: AuditConfig.AuditLogConfigs":
+    prefix: "auditLogConfigs"
+    body: """
+      auditConfigs:
+      - $1
+    """
+    description: "The configuration for logging of each type of permission."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+    rightLabel: "object (AuditLogConfig)"
+  "GCP-Policy: AuditConfig.AuditLogConfigs.LogType":
+    prefix: "logType"
+    body: """
+      - logType: $1
+    """
+    description: "The log type that this config enables."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+    rightLabel: "enum (LogType)"
+  "GCP-Policy: AuditConfig.AuditLogConfigs.ExemptedMembers":
+    prefix: "exemptedMembers"
+    body: """
+      exemptedMembers:
+      - $1
+    """
+    description: "Specifies the identities that do not cause logging for this type of permission."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+    rightLabel: "string"
+  "GCP-Policy: LogType.Unspecified":
+    prefix: "LOG_TYPE_UNSPECIFIED"
+    body: "LOG_TYPE_UNSPECIFIED"
+    description: "Default case. Should never be this."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+  "GCP-Policy: LogType.Admin_Read":
+    prefix: "ADMIN_READ"
+    body: "ADMIN_READ"
+    description: "Admin reads."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+  "GCP-Policy: LogType.Write":
+    prefix: "DATA_WRITE"
+    body: "DATA_WRITE"
+    description: "Data writes."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
+  "GCP-Policy: LogType.Read":
+    prefix: "DATA_READ"
+    body: "DATA_READ"
+    description: "Data reads."
+    descriptionMoreURL: "https://cloud.google.com/iam/docs/reference/rest/v1/Policy"
